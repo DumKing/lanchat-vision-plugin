@@ -1,2 +1,11 @@
-# lanchat-vision-plugin
-LanChat visual recognition plugin and isolated native sidecar.
+# LanChat 视觉识别插件
+
+视觉识别从 LanChat 核心程序中完整拆出，以独立插件交付。核心安装包不包含视觉页面、识别逻辑、ORT/OpenVINO、模型脚本或模型资源。
+
+## 架构
+
+- `web/`：插件页面，通过标准 Host API 接入主题、通知、存储和生命周期。
+- `sidecar/`：签名的本地识别进程，只开放受约束的 IPC 协议。
+- `models/`：模型清单和下载规则；二进制模型不进入 Git 仓库。
+
+视觉插件需要 `native.sidecar` 权限。正式包必须由官方流水线签名，宿主在安装和启动前校验清单、哈希与签名。

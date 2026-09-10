@@ -1,0 +1,11 @@
+node_modules/
+dist/
+target/
+models/*.onnx
+models/*.bin
+models/*.xml
+*.lcp
+*.sha256
+*.sig
+.env*
+!.env.example
