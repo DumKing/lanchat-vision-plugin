@@ -1,0 +1,16 @@
+{
+  "manifestVersion": 1,
+  "id": "com.lanchat.vision",
+  "name": "视觉识别",
+  "version": "0.8.0",
+  "apiVersion": "1.0",
+  "minHostVersion": "0.8.0",
+  "type": "web-sidecar",
+  "entry": "web/dist/index.html",
+  "icon": "web/assets/icon.svg",
+  "singleton": true,
+  "capabilities": ["devices.read", "storage.private", "theme.read", "ui.notify", "logger.write", "native.sidecar"],
+  "contributes": {
+    "navigation": [{ "id": "vision", "title": "视觉识别", "icon": "web/assets/icon.svg", "order": 310 }]
+  }
+}

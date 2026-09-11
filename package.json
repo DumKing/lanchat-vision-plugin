@@ -1,0 +1,11 @@
+{
+  "name": "@dumking/lanchat-vision-plugin",
+  "private": true,
+  "version": "0.8.0",
+  "scripts": {
+    "build": "npm run build --workspace @dumking/lanchat-plugin-vision-web",
+    "test": "cargo test --manifest-path sidecar/Cargo.toml",
+    "check": "npm run build && cargo check --manifest-path sidecar/Cargo.toml"
+  },
+  "workspaces": ["web"]
+}

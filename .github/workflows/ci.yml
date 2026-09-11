@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main, codex/vision-plugin-migration]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+  sidecar:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sidecar
+      - run: cargo check --manifest-path sidecar/Cargo.toml
+      - run: cargo test --manifest-path sidecar/Cargo.toml --no-fail-fast

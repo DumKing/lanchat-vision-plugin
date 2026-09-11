@@ -1,9 +1,10 @@
 node_modules/
 dist/
 target/
-models/*.onnx
-models/*.bin
-models/*.xml
+models/**/*.onnx
+models/**/*.bin
+models/**/*.xml
+models/**/windows-x86_64/
 *.lcp
 *.sha256
 *.sig

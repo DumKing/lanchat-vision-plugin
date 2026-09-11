@@ -1,0 +1,7 @@
+{
+  "name": "@dumking/lanchat-plugin-vision-web",
+  "private": true,
+  "version": "0.8.0",
+  "type": "module",
+  "scripts": { "build": "node scripts/build.mjs" }
+}
